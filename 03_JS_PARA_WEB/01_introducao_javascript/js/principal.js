@@ -44,3 +44,58 @@ for (var i = 0; i < pacientes.length; i++){
         tdImc.textContent = "Altura e/ou peso inválidos!"
     }
 }
+
+var botaoAdicionar = document.querySelector('#adicionar-paciente');
+
+// O botão recebe o evento 'click' , que ao ser acionado dará inicio à função de adicionar paciente à tabela.
+botaoAdicionar.addEventListener('click', function(Event){ // uso de funções anônimas, explicação no final. 
+    Event.preventDefault(); //explicação abaixo
+    
+    // Manipulando inputs e campos da tabela
+
+    // 1 - Coleta os valores recebidos dentro dos inputs do formulário
+    var form = document.querySelector('#form-adiciona');
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    // 2 - Cria a nova linha da tabela que receberá o valor inserido no input
+    var pacienteTr = document.createElement('tr');
+
+    var nome = document.createElement('td');
+    var pesoTd = document.createElement('td');
+    var alturaTd = document.createElement('td');
+    var gorduraTd = document.createElement('td');
+    var imcTd = document.createElement('td');
+
+    // 3 - Insere o valor nos respectivos campos da tabela
+    nomeTd.textContent = nome;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = gordura;
+
+    // 4 - Delega o elemento filho(td) ao elemento pai (tr) - explicação ao fim. 
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+
+    // 5 - Delega o elemento filho(tr) ao elemento pai(tabela)
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+
+});
+
+/*                              PREVENT DEFAULT
+    O preventDefault() é útil quando você tem diversos handlers e quer que um elemento tenha um comportamento único, sem herdar o comportamento dos elementos onde ele está contido. No caso, o botão está dentro de um 'form', que possui o comportamento padrão de limpar os dados preenchidos nos campos, recarregar a página e enviar os dados. Com o preventDefault podemos mudar esse comportamento desativando o reload da página. 
+*/
+
+/*                              APPEND CHILD 
+    A função appendChild() insere um elemento filho (children) ao elemento pai (parent) na última posição, ela auxilia na criação de um elemento DOM.
+        elemento_pai.appendChild(elemento_filho)
+*/
+
+/*                                 FUNÇÕES ANÔNIMAS
+    Funções anônimas são funções que não recebem nome, contidas dentro de uma variável e úteis quando a função não será utilizada para outros fins.
+*/
