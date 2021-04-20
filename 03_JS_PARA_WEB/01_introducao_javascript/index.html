@@ -12,7 +12,7 @@
 
 		<header>
 			<div class="container">
-				<h1 class="titulo" id="p1">Aparecida Nutrição</h1>
+				<h2 class="titulo">Aparecida Nutrição</h2>
 			</div>
 		</header>
 		<main>
@@ -29,10 +29,9 @@
 						</tr>
 					</thead>
 					<tbody id="tabela-pacientes">
-						
 						<tr class="paciente" id="primeiro-paciente">
 							<td class="info-nome">Paulo</td>
-							<td class="info-peso">-100</td>
+							<td class="info-peso">100</td>
 							<td class="info-altura">2.00</td>
 							<td class="info-gordura">10</td>
 							<td class="info-imc">0</td>
@@ -64,7 +63,7 @@
 						<tr class="paciente" >
 							<td class="info-nome">Tatiana</td>
 							<td class="info-peso">46</td>
-							<td class="info-altura">4.55</td>
+							<td class="info-altura">1.55</td>
 							<td class="info-gordura">19</td>
 							<td class="info-imc">0</td>
 						</tr>
@@ -75,29 +74,31 @@
 		</main>
 
 		<section class="container">
-			<h2 id="titulo-form">Adicionar novo paciente</h2>
-			<form id= "form-adiciona">
-				<div class="grupo">
-					<label for="nome">Nome:</label>
-					<input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo">
-				</div>
-				<div class="grupo">
-					<label for="peso">Peso:</label>
-					<input id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="campo campo-medio">
-				</div>
-				<div class="grupo">
-					<label for="altura">Altura:</label>
-					<input id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="campo campo-medio">
-				</div>
-				<div class="grupo">
-					<label for="gordura">% de Gordura:</label>
-					<input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
-				</div>
-		
-				<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
-			</form>
+		    <h2 id="titulo-form">Adicionar novo paciente</h2>
+		    <form id="form-adiciona">
+		        <div class="">
+		            <label for="nome">Nome:</label>
+		            <input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo">
+		        </div>
+		        <div class="grupo">
+		            <label for="peso">Peso:</label>
+		            <input id="peso" name="peso" type="text" placeholder="digite o peso do seu paciente" class="campo campo-medio">
+		        </div>
+		        <div class="grupo">
+		            <label for="altura">Altura:</label>
+		            <input id="altura" name="altura" type="text" placeholder="digite a altura do seu paciente" class="campo campo-medio">
+		        </div>
+		        <div class="grupo">
+		            <label for="gordura">% de Gordura:</label>
+		            <input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
+		        </div>
+
+		        <button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+		    </form>
 		</section>
 
-		<script src="/03_JS_PARA_WEB/01_introducao_javascript/js/principal.js"></script>
+		<script src="js/calcula-imc.js" ></script>
+		<script src="js/form.js" ></script>
+
 	</body>
 </html>
